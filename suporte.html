@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte - AirSafe</title>
+    <link rel="stylesheet" href="suporte.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            
+            <nav class="nav">
+                <img src="image-removebg-preview.png" alt="Logo AirSafe" id="logo-airsafe">
+                <div class="hamburger" onclick="toggleMenu(this)">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="adiquira.html">Adquirir</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="support-message">
+        <div class="container">
+            <h1>Mensagem Enviada com Sucesso!</h1>
+            <p>Obrigado por entrar em contato com a AirSafe. Nossa equipe responderá sua mensagem o mais breve possível.</p>
+            <a href="index.html" class="btn-link">Voltar para a Página Inicial</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Compra | Suporte | Conecte-se com a AirSafe</p>
+            <p>© 2025 AirSafe - Segurança Inteligente ao seu alcance.</p>
+        </div>
+    </footer>
+    <script>
+    function toggleMenu(el) {
+        var nav = el.parentElement;
+        nav.classList.toggle('active');
+    }
+    </script>
+</body>
+</html>

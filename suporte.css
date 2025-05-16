@@ -1,0 +1,44 @@
+.support-message {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+.support-message h1 {
+    font-size: 2rem;
+    color: #004a6e; 
+    margin-bottom: 20px;
+}
+
+.support-message p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.btn-link {
+    display: inline-block;
+    background-color: #e63946; 
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.btn-link:hover {
+    background-color: #c5303e; /
+}
+.footer {
+    background-color: #004a6e; 
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+.footer p {
+    margin: 5px 0;
+}

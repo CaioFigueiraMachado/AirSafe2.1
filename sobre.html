@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - AirSafe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+          
+            <nav class="nav">
+                <img src="image-removebg-preview.png" alt="Logo AirSafe" id="logo-airsafe">
+                <div class="hamburger" onclick="toggleMenu(this)">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="index.html#inicio">Início</a>
+                <a href="index.html#beneficios">Benefícios</a>
+                <a href="index.html#como-funciona">Como Funciona</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="contato.html">Contato</a>
+                <a href="adiquira.html" class="btn-adquirir">Adquirir agora!</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="about">
+        <section class="about-section">
+            <div class="container">
+                <h1>SOBRE NÓS</h1>
+                <p>Somos alunos do 2º ano do ensino médio fazendo o curso do SENAI de Desenvolvimento de Sistemas.</p>
+                <p>Proteger vidas e residências por meio de soluções tecnológicas. Nosso principal objetivo é proporcionar segurança e tranquilidade para nossos clientes.</p>
+                <p>Ser a principal referência em sistemas de segurança residenciais inteligentes, reconhecida pela excelência em prevenção de acidentes domésticos. Queremos transformar a segurança do lar com a utilização de tecnologias que protejam as pessoas e suas famílias.</p>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <section class="about-section">
+            <div class="container">
+                <h1>SOBRE O PRODUTO</h1>
+                <p>É um sensor inteligente capaz de identificar vazamentos de gás e incêndios. Em caso de vazamento, o sensor envia um alerta via SMS ao dono da casa e abre automaticamente as janelas para ventilação. Se detectar um incêndio, ele também notifica o proprietário para que acione os bombeiros rapidamente. Com tecnologia avançada e automação eficiente, a AirSafe proporciona mais segurança e tranquilidade para os lares.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 AirSafe - Segurança Inteligente ao seu alcance.</p>
+        </div>
+    </footer>
+    <script>
+    function toggleMenu(el) {
+        var nav = el.parentElement;
+        nav.classList.toggle('active');
+    }
+    </script>
+</body>
+</html>
