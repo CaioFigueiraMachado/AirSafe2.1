@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adquirir - AirSafe</title>
     <link rel="stylesheet" href="adiquira.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="adq.js"></script>
+
 </head>
 <body>
     <header class="header">
@@ -19,7 +22,7 @@
                 </div>
                 <a href="index.html">Início</a>
                 <a href="sobre.html">Sobre</a>
-                <a href="adiquira.html">Adquirir</a>
+                
                 <a href="contato.html" class="btn-adquirir">Contato</a>
             </nav>
         </div>
@@ -47,23 +50,62 @@
             </div>
         </section>
 
-        <section class="support-section">
-            <div class="container">
-                <h2>PRECISA DE SUPORTE?</h2>
-                <p>Nossa equipe está pronta para te ajudar 24/7.</p>
-                <div class="contact-info">
-                    <p><strong>E-mail:</strong> airsafe.cpv@gmail.com</p>
-                    <p><strong>Mensagem:</strong> 12-34567-8901</p>
+                <!-- ...existing code... -->
+        <!-- Substitua toda a section .support-section pelo código abaixo -->
+
+        <section class="purchase-form-section">
+            <div class="purchase-form-container">
+                <div class="purchase-form-card">
+                    <h2 class="purchase-title">Informações do cliente</h2>
+                    <form class="purchase-form">
+                        <label for="nome">Nome completo*</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                        <label for="email">E-mail*</label>
+                        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+                        <label for="telefone">Telefone*</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="Seu número" required>
+                        <label for="cpf">CPF*</label>
+                        <input type="text" id="cpf" name="cpf" placeholder="Seu CPF" required>
+                        <label for="cep">CEP*</label>
+                        <input type="text" id="cep" name="cep" placeholder="Seu CEP" required>
+                        <label>Escolha um método de pagamento</label>
+                        <div class="payment-methods">
+                            <label><input type="radio" name="pagamento" value="boleto" required> Boleto</label>
+                            <label><input type="radio" name="pagamento" value="pix"> PIX</label>
+                            <label><input type="radio" name="pagamento" value="cartao"> Cartão de Crédito</label>
+                        </div>
+                        
+                        <!-- Adicione dentro do <form class="purchase-form">, logo após os métodos de pagamento -->
+<div class="card-fields" style="display:none; margin-top:16px;">
+    <label for="numero-cartao">Número do cartão*</label>
+    <input type="text" id="numero-cartao" name="numero-cartao" placeholder="Número do cartão" maxlength="19" required>
+    <label for="nome-cartao">Nome impresso no cartão*</label>
+    <input type="text" id="nome-cartao" name="nome-cartao" placeholder="Nome impresso no cartão" required>
+    <div style="display: flex; gap: 12px;">
+        <div style="flex:1;">
+            <label for="validade-cartao">Validade*</label>
+            <input type="text" id="validade-cartao" name="validade-cartao" placeholder="MM/AA" maxlength="5" required>
+        </div>
+        <div style="flex:1;">
+            <label for="cvv-cartao">CVV*</label>
+            <input type="text" id="cvv-cartao" name="cvv-cartao" placeholder="CVV" maxlength="4" required>
+        </div>
+    </div>
+</div>
+<button type="submit" class="btn-enviar">Enviar</button>
+                    </form>
                 </div>
-                <form class="support-form">
-                    <input type="text" placeholder="Nome">
-                    <input type="email" placeholder="E-mail">
-                    <input type="text" placeholder="Assunto">
-                    <textarea placeholder="Mensagem"></textarea>
-                    <a href="suporte.html" class="btn-link">ENVIAR</a>
-                </form>
+                <div class="purchase-summary-card">
+                    <h2 class="purchase-title">Resumo do pedido</h2>
+                    <p><strong>Nome do produto:</strong> AirShield</p>
+                    <p><strong>Subtotal:</strong> R$ 299,99</p>
+                    <p><strong>Frete:</strong> R$ 15,00</p>
+                    <p><strong>Total:</strong> R$ 314,99</p>
+                    <button class="btn-purchase">Finalizar compra &rarr;</button>
+                </div>
             </div>
         </section>
+     
 
         <section class="footer-info">
             <div class="container">

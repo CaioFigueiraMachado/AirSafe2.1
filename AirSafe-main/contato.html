@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - AirSafe</title>
+    <link rel="stylesheet" href="adiquira.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <img src="image-removebg-preview.png" alt="Logo AirSafe" id="logo-airsafe">
+                <div class="hamburger" onclick="toggleMenu(this)">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="adiquira.html">Adquirir</a>
+                <a href="adiquira.html" class="btn-adquirir">Adquira já!</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="support-message">
+        <div class="container">
+            <h1>Fale Conosco</h1>
+            <p>Preencha o formulário abaixo e nossa equipe entrará em contato o mais breve possível.</p>
+            <form class="support-form" action="obrigado.html" method="get">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <input type="text" name="assunto" placeholder="Assunto" required>
+                <textarea name="mensagem" placeholder="Mensagem" rows="5" required></textarea>
+                <button type="submit" class="btn-link">ENVIAR</button>
+            </form>
+            <div class="contact-info" style="margin-top:32px;">
+                <p><strong>E-mail:</strong> airsafe.cpv@gmail.com</p>
+                <p><strong>Telefone:</strong> 12-34567-8901</p>
+                <p><strong>Endereço:</strong> Av. Monsenhor Theodomiro Lobo, 100 - Caçapava/SP</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 AirSafe - Segurança Inteligente ao seu alcance.</p>
+        </div>
+    </footer>
+    <script>
+    function toggleMenu(el) {
+        var nav = el.parentElement;
+        nav.classList.toggle('active');
+    }
+    </script>
+</body>
+</html>
