@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - AirSafe</title>
+    <link rel="stylesheet" href="adiquira.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <img src="image-removebg-preview.png" alt="Logo AirSafe" id="logo-airsafe">
+                <div class="hamburger" onclick="toggleMenu(this)">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="adiquira.html">Produtos</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+    <main class="cart-main" style="display:flex;flex-direction:column;align-items:center;min-height:70vh;background:#f6fafd;">
+        <!-- Progress Bar -->
+        <div class="cart-progress" style="width:100%;max-width:900px;margin:32px auto 18px auto;display:flex;justify-content:space-between;align-items:center;">
+            <div class="progress-step active"><span>1</span>Selecione a forma de pagamento</div>
+            <div class="progress-arrow"></div>
+            <div class="progress-step"><span>2</span>Autenticação e Autorização</div>
+            <div class="progress-arrow"></div>
+            <div class="progress-step"><span>3</span>Confirmação do Pedido</div>
+            <div class="progress-secure"><img src="image.png" alt="Site Seguro" style="height:32px;vertical-align:middle;margin-left:12px;"></div>
+        </div>
+        <section class="cart-section" style="display:flex;gap:32px;justify-content:center;width:100%;max-width:900px;align-items:flex-start;">
+            <!-- Payment Methods -->
+            <div class="cart-payments" style="flex:2;background:#fff;border-radius:14px;padding:24px 18px;box-shadow:0 2px 12px rgba(0,0,0,0.07);min-width:320px;">
+                <h2 style="color:#004a6e;font-size:1.2rem;margin-bottom:18px;">Escolha a forma de pagamento</h2>
+                <form id="cart-payment-form" class="payment-form">
+                    <div class="payment-methods-grid">
+                        <label class="payment-card">
+                            <input type="radio" name="pagamento" value="boleto" required>
+                            <span class="icon-boleto"></span>
+                            <span>Boleto</span>
+                        </label>
+                        <label class="payment-card">
+                            <input type="radio" name="pagamento" value="pix">
+                            <span class="icon-pix"></span>
+                            <span>PIX</span>
+                        </label>
+                        <label class="payment-card">
+                            <input type="radio" name="pagamento" value="cartao">
+                            <span class="icon-cartao"></span>
+                            <span>Cartão de Crédito</span>
+                        </label>
+                    </div>
+                    <div class="payment-fields" id="cart-payment-fields"></div>
+                    <button type="submit" class="btn-purchase" style="margin-top:18px;width:100%;">Finalizar Pedido</button>
+                </form>
+            </div>
+            <!-- Purchase Summary -->
+            <div class="cart-summary" style="flex:1;background:#e6f7f9;border-radius:14px;padding:24px 18px;box-shadow:0 2px 12px rgba(0,0,0,0.07);min-width:260px;">
+                <h3 style="color:#1e7e34;font-size:1.1rem;margin-bottom:12px;">RESUMO DA COMPRA</h3>
+                <div id="cart-items"></div>
+                <div id="cart-total"></div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 AirSafe - Segurança Inteligente ao seu alcance.</p>
+        </div>
+    </footer>
+    <script>
+    function toggleMenu(el) {
+        var nav = el.parentElement;
+        nav.classList.toggle('active');
+    }
+    function renderCart() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let cartItems = document.getElementById('cart-items');
+        let cartTotal = document.getElementById('cart-total');
+        if (!cartItems || !cartTotal) return;
+        if (cart.length === 0) {
+            cartItems.innerHTML = '<p>Seu carrinho está vazio.</p>';
+            cartTotal.innerHTML = '';
+            return;
+        }
+        let html = '<ul class="cart-list">';
+        let total = 0;
+        cart.forEach((item, idx) => {
+            html += `<li>${item.product} - R$ ${item.price.toFixed(2)} <button onclick="removeFromCart(${idx})">Remover</button></li>`;
+            total += item.price;
+        });
+        html += '</ul>';
+        cartItems.innerHTML = html;
+        cartTotal.innerHTML = `<strong>Total: R$ ${total.toFixed(2)}</strong>`;
+    }
+    function removeFromCart(idx) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.splice(idx, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+    }
+    function renderCartSummary() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let cartItems = document.getElementById('cart-items');
+        let cartTotal = document.getElementById('cart-total');
+        if (!cartItems || !cartTotal) return;
+        if (cart.length === 0) {
+            cartItems.innerHTML = '<p>Seu carrinho está vazio.</p>';
+            cartTotal.innerHTML = '';
+            return;
+        }
+        let html = '<ul class="cart-list">';
+        let total = 0;
+        cart.forEach((item, idx) => {
+            html += `<li>${item.product} - R$ ${item.price.toFixed(2)} <button onclick=\"removeFromCart(${idx})\">Remover</button></li>`;
+            total += item.price;
+        });
+        html += '</ul>';
+        cartItems.innerHTML = html;
+        cartTotal.innerHTML = `<strong>Total: R$ ${total.toFixed(2)}</strong>`;
+    }
+    // Campos dinâmicos de pagamento
+    const cartPaymentForm = document.getElementById('cart-payment-form');
+    const cartPaymentFields = document.getElementById('cart-payment-fields');
+    cartPaymentForm && cartPaymentForm.addEventListener('change', function(e) {
+        const metodo = cartPaymentForm.pagamento.value;
+        let html = '';
+        if (metodo === 'boleto') {
+            html = `<p style='color:#004a6e;margin:12px 0;'>O boleto será gerado após finalizar o pedido.</p>`;
+        }
+        cartPaymentFields.innerHTML = html;
+    });
+    cartPaymentForm && cartPaymentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (cart.length === 0) {
+            Swal.fire({ icon: 'info', title: 'Carrinho vazio', text: 'Adicione produtos antes de finalizar a compra.' });
+            return;
+        }
+        const metodo = cartPaymentForm.pagamento.value;
+        let redirectUrl = 'autenticacao.html';
+        if (metodo === 'boleto') {
+            redirectUrl = 'carrinhoboleto.html';
+        } else if (metodo === 'cartao') {
+            redirectUrl = 'carrinhocartão.html';
+        }
+        Swal.fire({
+            icon: 'success',
+            title: 'Pedido realizado!',
+            text: 'Recebemos seus dados. Agora prossiga para autenticação e autorização.',
+            confirmButtonColor: '#ffd580'
+        }).then(() => {
+            localStorage.removeItem('cart');
+            renderCart();
+            cartPaymentForm.reset();
+            cartPaymentFields.innerHTML = '';
+            window.location.href = redirectUrl;
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+        renderCart();
+        renderCartSummary();
+    });
+    </script>
+</body>
+</html>

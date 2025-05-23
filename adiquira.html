@@ -28,101 +28,28 @@
         </div>
     </header>
 
-    <main class="purchase">
-        <section class="purchase-section">
-            <div class="container">
-                <h1>COMO ADQUIRIR O AIRSAFE?</h1>
-                <p>Proteja sua casa de forma simples e rápida!</p>
-                <div class="steps">
-                    <div class="step">
-                        <h3>Escolha seu AirSafe</h3>
-                        <p>Selecione o modelo ideal para sua casa, veja as funcionalidades e benefícios.</p>
-                    </div>
-                    <div class="step">
-                        <h3>Finalize a Compra</h3>
-                        <p>Pagamento seguro via cartão, boleto ou Pix. Entrega rápida para todo o Brasil.</p>
-                    </div>
-                    <div class="step">
-                        <h3>Instale e Fique Seguro</h3>
-                        <p>Fácil instalação, sem complicações. Suporte especializado.</p>
-                    </div>
+    <main class="choose-product-main">
+        <section class="choose-section">
+            <h1 class="choose-title">Escolha seu AirSafe</h1>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="image.png" alt="AirSafe Standard" class="product-img">
+                    <h2>AirSafe Standard</h2>
+                    <p>Proteção essencial contra vazamentos de gás e incêndio. Instalação fácil e alertas instantâneos.</p>
+                    <span class="product-price">R$ 143,00</span>
+                    <button class="btn-add-cart" onclick="addToCart('AirSafe Standard', 143)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="product-card">
+                    <img src="image.png" alt="AirSafe Premium" class="product-img">
+                    <h2>AirSafe Premium</h2>
+                    <p>Inclui todos os recursos do Standard + monitoramento remoto e suporte prioritário.</p>
+                    <span class="product-price">R$ 199,00</span>
+                    <button class="btn-add-cart" onclick="addToCart('AirSafe Premium', 199)">Adicionar ao Carrinho</button>
                 </div>
             </div>
-        </section>
-
-                <!-- ...existing code... -->
-        <!-- Substitua toda a section .support-section pelo código abaixo -->
-
-        <section class="purchase-form-section">
-            <div class="purchase-form-container" style="padding-left:16px; padding-right:16px;">
-                <div class="purchase-form-card">
-                    <h2 class="purchase-title">Informações do cliente</h2>
-                    <form class="purchase-form">
-                        <label for="nome">Nome completo*</label>
-                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
-                        <label for="email">E-mail*</label>
-                        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
-                        <label for="telefone">Telefone*</label>
-                        <input type="tel" id="telefone" name="telefone" placeholder="Seu número" required>
-                        <label for="cpf">CPF*</label>
-                        <input type="text" id="cpf" name="cpf" placeholder="Seu CPF" required>
-                        <label for="cep">CEP*</label>
-                        <input type="text" id="cep" name="cep" placeholder="Seu CEP" required>
-                        <label>Escolha um método de pagamento</label>
-                        <div class="payment-methods">
-                            <label><input type="radio" name="pagamento" value="boleto" required> Boleto</label>
-                            <label><input type="radio" name="pagamento" value="pix"> PIX</label>
-                            <label><input type="radio" name="pagamento" value="cartao"> Cartão de Crédito</label>
-                        </div>
-                        
-                        <!-- Adicione dentro do <form class="purchase-form">, logo após os métodos de pagamento -->
-<div class="card-fields" style="display:none; margin-top:16px;">
-    <label for="numero-cartao">Número do cartão*</label>
-    <input type="text" id="numero-cartao" name="numero-cartao" placeholder="Número do cartão" maxlength="19" required>
-    <label for="nome-cartao">Nome impresso no cartão*</label>
-    <input type="text" id="nome-cartao" name="nome-cartao" placeholder="Nome impresso no cartão" required>
-    <div style="display: flex; gap: 12px;">
-        <div style="flex:1;">
-            <label for="validade-cartao">Validade*</label>
-            <input type="text" id="validade-cartao" name="validade-cartao" placeholder="MM/AA" maxlength="5" required>
-        </div>
-        <div style="flex:1;">
-            <label for="cvv-cartao">CVV*</label>
-            <input type="text" id="cvv-cartao" name="cvv-cartao" placeholder="CVV" maxlength="4" required>
-        </div>
-    </div>
-</div>
-<button type="submit" class="btn-enviar">Enviar</button>
-                    </form>
-                </div>
-                <div class="purchase-summary-card">
-    <h2 class="purchase-title">Resumo do pedido</h2>
-    <p><strong>Nome do produto:</strong> AirShield</p>
-    <p><strong>Subtotal:</strong> R$ 143,00</p>
-    <p><strong>Frete:</strong> R$ 17,00</p>
-    <p><strong>Total:</strong> R$ 160,00</p>
-    <button class="btn-purchase">Finalizar compra &rarr;</button>
-</div>
-            </div>
-        </section>
-     
-
-        <section class="footer-info">
-            <div class="container">
-                <h3>CONECTE-SE COM A AIRSAFE</h3>
-                <p><strong>Endereço:</strong> Av. Monsenhor Theodomiro Lobo, 100 - Parque Res. Maria Elmira, Caçapava - SP, 12285-050</p>
-                <p><strong>Redes sociais:</strong> 📱 💬</p>
-            </div>
+            <a href="carrinho.html" class="btn-go-cart">Ir para o Carrinho</a>
         </section>
     </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>Compra | Suporte | Conecte-se com a AirSafe</p>
-            <p>© 2025 AirSafe - Segurança Inteligente ao seu alcance.</p>
-        </div>
-    </footer>
-
     <script>
     function toggleMenu(el) {
     var nav = el.parentElement;
@@ -143,6 +70,40 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+});
+function addToCart(product, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ product, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    Swal.fire({
+        icon: 'success',
+        title: 'Adicionado ao carrinho!',
+        text: product + ' foi adicionado ao seu carrinho.',
+        confirmButtonColor: '#ffd580'
+    });
+}
+window.addToCart = addToCart;
+// Exibe campos de pagamento conforme método
+const paymentForm = document.getElementById('payment-form');
+const paymentFields = document.getElementById('payment-fields');
+paymentForm && paymentForm.addEventListener('change', function(e) {
+    const metodo = paymentForm.pagamento.value;
+    let html = '';
+    if (metodo === 'boleto') {
+        html = `<p style='color:#004a6e;margin:12px 0;'>O boleto será gerado após finalizar o pedido.</p>`;
+    }
+    paymentFields.innerHTML = html;
+});
+paymentForm && paymentForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    Swal.fire({
+        icon: 'success',
+        title: 'Pedido realizado!',
+        text: 'Recebemos seus dados. Em breve você receberá as instruções de pagamento no seu e-mail.',
+        confirmButtonColor: '#ffd580'
+    });
+    paymentForm.reset();
+    paymentFields.innerHTML = '';
 });
     </script>
     <style>
@@ -187,6 +148,10 @@ document.addEventListener('DOMContentLoaded', function() {
             max-width: 100vw;
             padding: 0;
         }
+        .card-fields-row {
+        flex-direction: column;
+        gap: 6px;
+    }
     }
     .purchase-form-section {
         width: 96%;
@@ -201,6 +166,42 @@ document.addEventListener('DOMContentLoaded', function() {
         padding-left: 32    px;
         padding-right: 32px;
     }
+    .card-fields-styled {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 18px 14px 10px 14px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.input-card {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 7px;
+    border: 1.5px solid #e0d6c3;
+    background: #fffbe9;
+    color: #222;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    outline: none;
+    transition: box-shadow 0.2s, border 0.2s;
+}
+.input-card:focus {
+    border: 1.5px solid #ffd580;
+    box-shadow: 0 0 0 2px #ffe4b5;
+}
+.card-fields-row {
+    display: flex;
+    gap: 12px;
+}
+.card-fields-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
     </style>
   
 </body>

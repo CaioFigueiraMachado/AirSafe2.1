@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação do Pedido - Cartão de Crédito | AirSafe</title>
+    <link rel="stylesheet" href="adiquira.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <img src="image-removebg-preview.png" alt="Logo AirSafe" id="logo-airsafe">
+                <div class="hamburger" onclick="toggleMenu(this)">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="adiquira.html">Produtos</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+    <main class="cart-main" style="display:flex;flex-direction:column;align-items:center;min-height:70vh;background:#f6fafd;">
+        <!-- Progress Bar -->
+        <div class="cart-progress" style="width:100%;max-width:900px;margin:32px auto 18px auto;display:flex;justify-content:space-between;align-items:center;">
+            <div class="progress-step"><span>1</span>Selecione a forma de pagamento</div>
+            <div class="progress-arrow"></div>
+            <div class="progress-step"><span>2</span>Autenticação e Autorização</div>
+            <div class="progress-arrow"></div>
+            <div class="progress-step active"><span>3</span>Confirmação do Pedido</div>
+            <div class="progress-secure"><img src="image.png" alt="Site Seguro" style="height:32px;vertical-align:middle;margin-left:12px;"></div>
+        </div>
+        <section class="cart-section" style="display:flex;gap:32px;justify-content:center;width:100%;max-width:900px;align-items:flex-start;">
+            <div class="cart-payments" style="flex:2;background:#fff;border-radius:14px;padding:32px 28px 28px 28px;box-shadow:0 4px 18px rgba(0,74,110,0.10);min-width:320px;display:flex;flex-direction:column;align-items:center;">
+                <h2 style="color:#004a6e;font-size:1.35rem;margin-bottom:22px;letter-spacing:0.5px;">Selecione a bandeira do cartão</h2>
+                <div class="credit-card-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;width:100%;max-width:520px;margin:0 auto 18px auto;">
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa"><span>Visa</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://logodownload.org/wp-content/uploads/2016/10/visa-electron-logo-1.png" alt="Visa PL"><span>Visa PL Bandeirado</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Mastercard-logo.png" alt="Mastercard"><span>Mastercard</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo_%282018%29.svg" alt="American Express"><span>American Express</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://logodownload.org/wp-content/uploads/2017/04/multicheque-logo.png" alt="Multicheque"><span>Multicheque</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://logodownload.org/wp-content/uploads/2017/04/hipercard-logo-0.png" alt="Hiper"><span>Hiper</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://logodownload.org/wp-content/uploads/2017/04/aura-logo.png" alt="Aura"><span>Aura</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://logodownload.org/wp-content/uploads/2017/04/ibi-logo.png" alt="Banco Ibi"><span>Banco Ibi</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://logodownload.org/wp-content/uploads/2017/04/policard-logo.png" alt="Policard"><span>Policard</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://logodownload.org/wp-content/uploads/2017/04/supercard-logo.png" alt="SuperCard"><span>SuperCard</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://logodownload.org/wp-content/uploads/2017/04/excard-logo.png" alt="ExCard"><span>ExCard</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://logodownload.org/wp-content/uploads/2017/04/edmcard-logo.png" alt="EDMCard"><span>EDMCard</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://logodownload.org/wp-content/uploads/2017/04/cooper-card-logo.png" alt="Cooper Card"><span>Cooper Card</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://logodownload.org/wp-content/uploads/2017/04/dacasa-logo.png" alt="Dacasa"><span>Dacasa</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://logodownload.org/wp-content/uploads/2017/04/cooplife-logo.png" alt="Cooplife"><span>Cooplife</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://logodownload.org/wp-content/uploads/2017/04/credsystem-logo.png" alt="Credsystem"><span>Credsystem</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://logodownload.org/wp-content/uploads/2017/04/banese-logo.png" alt="Banese"><span>Banese</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://logodownload.org/wp-content/uploads/2017/04/sorocred-logo.png" alt="Sorocred"><span>Sorocred</span></div>
+                    <div class="card-flag" onclick="selectCardFlag(this)"><img src="https://logodownload.org/wp-content/uploads/2017/04/green-card-logo.png" alt="GreenCard"><span>GreenCard</span></div>
+                </div>
+                <div id="card-data-form-container"></div>
+                <a href="obrigado.html" class="btn-go-home" style="display:inline-block;background:#004a6e;color:#fff;padding:12px 32px;border-radius:32px;font-size:1.1rem;font-weight:700;text-decoration:none;margin-top:18px;transition:background 0.2s, color 0.2s;">Finalizar Pedido</a>
+            </div>
+            <div class="cart-summary" style="flex:1;background:#e6f7f9;border-radius:18px;padding:32px 22px 22px 22px;box-shadow:0 4px 18px rgba(0,74,110,0.10);min-width:260px;display:flex;flex-direction:column;align-items:flex-start;">
+                <h3 style="color:#1e7e34;font-size:1.15rem;margin-bottom:14px;letter-spacing:0.5px;">DICA DE SEGURANÇA</h3>
+                <p style="color:#004a6e;font-size:1.04em;margin-bottom:0;">Nunca compartilhe os dados do seu cartão. Utilize apenas em sites confiáveis e verifique o cadeado de segurança no navegador.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 AirSafe - Segurança Inteligente ao seu alcance.</p>
+        </div>
+    </footer>
+    <script>
+    function toggleMenu(el) {
+        var nav = el.parentElement;
+        nav.classList.toggle('active');
+    }
+    function selectCardFlag(el) {
+        // Remove seleção anterior
+        document.querySelectorAll('.card-flag.selected').forEach(f => f.classList.remove('selected'));
+        el.classList.add('selected');
+        // Exibe o formulário de dados do cartão
+        document.getElementById('card-data-form-container').innerHTML = `
+            <form class='card-data-form' style='margin-top:24px;width:100%;max-width:340px;'>
+                <label for='nome-cartao'>Nome impresso no cartão*</label>
+                <input type='text' id='nome-cartao' name='nome-cartao' required>
+                <label for='numero-cartao'>Número do cartão*</label>
+                <input type='text' id='numero-cartao' name='numero-cartao' maxlength='19' required>
+                <div style='display:flex;gap:12px;'>
+                    <div style='flex:1;'>
+                        <label for='validade-cartao'>Validade*</label>
+                        <input type='text' id='validade-cartao' name='validade-cartao' placeholder='MM/AA' maxlength='5' required>
+                    </div>
+                    <div style='flex:1;'>
+                        <label for='cvv-cartao'>CVV*</label>
+                        <input type='text' id='cvv-cartao' name='cvv-cartao' maxlength='4' required>
+                    </div>
+                </div>
+                <button type='submit' class='btn-purchase' style='margin-top:18px;width:100%;'>Finalizar Pedido</button>
+            </form>
+        `;
+        // Scroll até o formulário
+        document.getElementById('card-data-form-container').scrollIntoView({behavior:'smooth'});
+        // Opcional: Adicione lógica para submissão do formulário se desejar
+    }
+    </script>
+    <style>
+    .credit-card-grid {
+        margin-top: 8px;
+    }
+    .card-flag {
+        background: #f6fafd;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,74,110,0.07);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 16px 8px 10px 8px;
+        gap: 8px;
+        transition: box-shadow 0.2s, border 0.2s;
+        cursor: pointer;
+        border: 2px solid #e6f7f9;
+    }
+    .card-flag:hover {
+        border: 2px solid #004a6e;
+        box-shadow: 0 4px 16px rgba(0,74,110,0.13);
+    }
+    .card-flag img {
+        width: 48px;
+        height: 32px;
+        object-fit: contain;
+        background: #fff;
+        border-radius: 6px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .card-flag span {
+        color: #004a6e;
+        font-size: 0.98em;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 4px;
+    }
+    .card-flag.selected {
+        border: 2px solid #e63946 !important;
+        box-shadow: 0 4px 16px rgba(230,57,70,0.13);
+        background: #fffbe9;
+    }
+    .card-data-form label {
+        color: #004a6e;
+        font-weight: 600;
+        margin-top: 12px;
+        margin-bottom: 4px;
+        display: block;
+        font-size: 1em;
+    }
+    .card-data-form input[type="text"] {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1.5px solid #b3d8e6;
+        border-radius: 8px;
+        margin-bottom: 14px;
+        font-size: 1em;
+        background: #f6fafd;
+        transition: border 0.2s;
+    }
+    .card-data-form input[type="text"]:focus {
+        border: 1.5px solid #004a6e;
+        outline: none;
+    }
+    @media (max-width: 900px) {
+        .credit-card-grid {
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+    @media (max-width: 600px) {
+        .credit-card-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</body>
+</html>

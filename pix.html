@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação do Pedido - AirSafe</title>
+    <link rel="stylesheet" href="adiquira.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <img src="image-removebg-preview.png" alt="Logo AirSafe" id="logo-airsafe">
+                <div class="hamburger" onclick="toggleMenu(this)">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="adiquira.html">Produtos</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+    <main class="cart-main" style="display:flex;flex-direction:column;align-items:center;min-height:70vh;background:#f6fafd;">
+        <!-- Progress Bar -->
+        <div class="cart-progress" style="width:100%;max-width:900px;margin:32px auto 18px auto;display:flex;justify-content:space-between;align-items:center;">
+            <div class="progress-step"><span>1</span>Selecione a forma de pagamento</div>
+            <div class="progress-arrow"></div>
+            <div class="progress-step"><span>2</span>Autenticação e Autorização</div>
+            <div class="progress-arrow"></div>
+            <div class="progress-step active"><span>3</span>Confirmação do Pedido</div>
+            <div class="progress-secure"><img src="image.png" alt="Site Seguro" style="height:32px;vertical-align:middle;margin-left:12px;"></div>
+        </div>
+        <section class="cart-section" style="display:flex;gap:32px;justify-content:center;width:100%;max-width:900px;align-items:flex-start;">
+            <div class="cart-payments" style="flex:2;background:#fff;border-radius:14px;padding:32px 28px 28px 28px;box-shadow:0 4px 18px rgba(0,74,110,0.10);min-width:320px;display:flex;flex-direction:column;align-items:center;">
+                <h2 style="color:#004a6e;font-size:1.35rem;margin-bottom:22px;letter-spacing:0.5px;">Pagamento via PIX</h2>
+                <p style="text-align:center;max-width:340px;">Para concluir sua compra, faça o pagamento utilizando a chave PIX ou o QR Code abaixo:</p>
+                <div class="pix-info-block" style="background:#fff;border-radius:10px;padding:16px 10px;margin:18px 0 24px 0;font-size:1.1rem;color:#004a6e;display:flex;flex-direction:column;align-items:center;gap:8px;">
+                    <strong>Chave PIX:</strong>
+                    <span id="pix-chave">airsafe.cpv@gmail.com</span>
+                    <button onclick="copyPixKey()" class="btn-copy">Copiar chave</button>
+                </div>
+                <div class="pix-qr-block" style="margin:18px 0 18px 0;">
+                    <img src="Pagamento pix.png" alt="QR Code PIX" class="pix-qr-img" style="width:180px;height:180px;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.10);margin-bottom:8px;">
+                    <p style="margin:0;">Abra o app do seu banco, escolha pagar com PIX e escaneie o QR Code.</p>
+                </div>
+                <a href="pixenviado.html" class="btn-go-home" style="display:inline-block;background:#004a6e;color:#fff;padding:12px 32px;border-radius:32px;font-size:1.1rem;font-weight:700;text-decoration:none;margin-top:18px;transition:background 0.2s, color 0.2s;">Finalizar pedido</a>
+            </div>
+            <div class="cart-summary" style="flex:1;background:#e6f7f9;border-radius:18px;padding:32px 22px 22px 22px;box-shadow:0 4px 18px rgba(0,74,110,0.10);min-width:260px;display:flex;flex-direction:column;align-items:flex-start;">
+                <h3 style="color:#1e7e34;font-size:1.15rem;margin-bottom:14px;letter-spacing:0.5px;">DICA DE SEGURANÇA</h3>
+                <p style="color:#004a6e;font-size:1.04em;margin-bottom:0;">Nunca compartilhe sua chave PIX. Ela garante a segurança da sua compra!</p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 AirSafe - Segurança Inteligente ao seu alcance.</p>
+        </div>
+    </footer>
+    <script>
+    function toggleMenu(el) {
+        var nav = el.parentElement;
+        nav.classList.toggle('active');
+    }
+    function copyPixKey() {
+        const chave = document.getElementById('pix-chave').innerText;
+        navigator.clipboard.writeText(chave);
+        alert('Chave PIX copiada!');
+    }
+    </script>
+</body>
+</html>
