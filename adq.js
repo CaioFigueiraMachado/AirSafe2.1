@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 confirmButtonText: 'OK',
                 confirmButtonColor: '#ffd580'
             }).then(() => {
-                window.location.href = 'index.html';
+                window.location.href = '#';
             });
         });
     });
@@ -95,4 +95,25 @@ document.addEventListener('DOMContentLoaded', function() {
         var nav = el.parentElement;
         nav.classList.toggle('active');
     };
+});
+function toggleMenu(el) {
+    var nav = el.parentElement;
+    nav.classList.toggle('active');
+}
+
+// SweetAlert2 ao clicar em Finalizar compra
+document.addEventListener('DOMContentLoaded', function() {
+    var btnPurchase = document.querySelector('.btn-purchase');
+    if (btnPurchase) {
+        btnPurchase.addEventListener('click', function(e) {
+            e.preventDefault();
+            Swal.fire({
+                icon: 'success',
+                title: 'Compra finalizada!',
+                text: 'Seu pedido foi realizado com sucesso. Você receberá um e-mail com os detalhes em breve.',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#004a6e'
+            });
+        });
+    }
 });

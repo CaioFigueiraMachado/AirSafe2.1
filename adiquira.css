@@ -57,6 +57,10 @@ body {
     text-align: center;
     transition: background 0.2s;
 }
+.btn-link{
+    text-decoration: none;
+    font-size: medium;
+}
 .btn-adquirir:hover {
     background: #c5303e;
 }
@@ -114,7 +118,12 @@ body {
 .purchase-section {
     padding: 50px 0;
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: #FFF7EF;
+    border-radius: 18px;
+    margin: 24px auto;
+    width: 96%;
+    max-width: 1200px;
+    box-sizing: border-box;
 }
 .purchase-section h1 {
     font-size: 2rem;
@@ -147,6 +156,14 @@ body {
     font-size: 1rem;
     color: #333;
 }
+@media (max-width: 700px) {
+    .purchase-section {
+        width: 98vw;
+        max-width: 98vw;
+        margin: 12px auto;
+        border-radius: 14px;
+    }
+}
 
 /* ======= FORMULÁRIO DE COMPRA ======= */
 .purchase-form-section {
@@ -154,22 +171,32 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
 }
 .purchase-form-container {
     display: flex;
-    gap: 32px;
+    gap: 64px;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1200px;
     justify-content: center;
     align-items: flex-start;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 60px;
+    padding-right: 60px;
+    box-sizing: border-box;
 }
 .purchase-form-card, .purchase-summary-card {
     background: #fffbe9;
     border-radius: 14px;
-    padding: 32px 32px 24px 32px;
+    padding: 48px 48px 36px 48px;
     box-shadow: 0 4px 32px rgba(0,0,0,0.08);
     width: 100%;
-    max-width: 480px;
+    max-width: 540px;
     color: #1a2c3a;
     display: flex;
     flex-direction: column;
@@ -239,14 +266,47 @@ body {
     font-size: 1.1rem;
     color: #1a2c3a;
 }
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
     .purchase-form-container {
         flex-direction: column;
         align-items: center;
+        gap: 24px;
+        padding-left: 16px;
+        padding-right: 16px;
+        max-width: 100vw;
     }
     .purchase-form-card, .purchase-summary-card {
         max-width: 100%;
         width: 100%;
+        padding: 32px 16px 24px 16px;
+    }
+}
+@media (max-width: 900px) {
+    .purchase-form-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .purchase-form-card, .purchase-summary-card {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+@media (max-width: 700px) {
+    .purchase-form-section {
+        margin: 24px 0;
+        max-width: 100vw;
+        padding: 0;
+    }
+    .purchase-form-container {
+        padding-left: 0;
+        padding-right: 0;
+        gap: 12px;
+    }
+    .purchase-form-card, .purchase-summary-card {
+        padding: 16px 8px 12px 8px;
     }
 }
 
