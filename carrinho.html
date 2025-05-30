@@ -20,11 +20,11 @@
                 <a href="index.html">Início</a>
                 <a href="sobre.html">Sobre</a>
                 <a href="adiquira.html">Produtos</a>
-                <a href="contato.html">Contato</a>
+                <a href="contato.html" class="btn-adquirir">Contato</a>
             </nav>
         </div>
     </header>
-    <main class="cart-main" style="display:flex;flex-direction:column;align-items:center;min-height:70vh;background:#f6fafd;">
+    <main class="cart-main" style="display:flex;flex-direction:column;align-items:center;min-height:70vh;">
         <!-- Progress Bar -->
         <div class="cart-progress" style="width:100%;max-width:900px;margin:32px auto 18px auto;display:flex;justify-content:space-between;align-items:center;">
             <div class="progress-step active"><span>1</span>Selecione a forma de pagamento</div>
@@ -68,11 +68,18 @@
             </div>
         </section>
     </main>
-    <footer class="footer">
+     <footer class="footer">
         <div class="container">
             <p>© 2025 AirSafe - Segurança Inteligente ao seu alcance.</p>
         </div>
-    </footer>
+    </footer>   
+    <script>
+    function toggleMenu(el) {
+        var nav = el.parentElement;
+        nav.classList.toggle('active');
+    }
+    </script>
+    
     <script>
     function toggleMenu(el) {
         var nav = el.parentElement;
@@ -167,16 +174,6 @@
         renderCartSummary();
     });
     </script>
-     <footer class="footer">
-        <div class="container">
-            <p></p>
-        </div>
-    </footer>
-    <script>
-        function toggleMenu(el) {
-            var nav = el.parentElement;
-            nav.classList.toggle('active');
-        }
-    </script>
+
 </body>
 </html>
